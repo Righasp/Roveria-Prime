@@ -1,22 +1,95 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #010213; /* Background color */
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 80vh; /* Ensures the page is scrollable */
+    padding-top: 20vh; /* Optional: Adds some space at the top of the page */
 }
 
 .container {
     text-align: center;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    border-radius: 22px;
+    box-shadow: 0 0 40px rgba(109, 77, 255, 0.5), 0 0 80px rgba(109, 77, 255, 0.5); /* Glow effect with #6D4DFF color */
+    margin-bottom: 100px; /* Space between containers */
+}
+.container2 {
+    text-align: center;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 22px;
+    box-shadow: 0 0 40px rgba(109, 77, 255, 0.5), 0 0 80px rgba(109, 77, 255, 0.5); /* Glow effect with #6D4DFF color */
+}
+
+button {
+    background-color: #6D4DFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 28px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px; /* Space between the paragraph and button */
+}
+
+button:hover {
+    background-color: #141E31; /* Darker shade for hover effect */
 }
 
 h1 {
     color: #333;
-    font-size: 2.5em;
+    font-size: 2.2em;
+    margin-top: -8px;
+}
+
+h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px; /* Space below the header */
+}
+
+p {
+    color: #666;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+.different-p {
+    font-size: 100em; /* Define different font size */
+}
+
+.Inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Outer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"], button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+}
+
+#bitStreamResult {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 20px;
+}
+
+#clubLogo {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
 }
