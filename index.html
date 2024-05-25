@@ -7,26 +7,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
+    <!-- <header>
+        <h1>Spider R&D</h1>
+    </header> -->
+    <h1>Spider R&D</h1>
     <!-- Logo -->
+    
     <img src="https://github.com/Righasp/Roveria-Prime/blob/main/Imgs/spiderlogo.aa201e32.png?raw=true" alt="Club Logo" id="clubLogo">
 
-    <!-- Rest of your content -->
-    <div class="container">
-        <h1>Height and Angle</h1>
-        <p id="heightText">Height: </p>
-        <p id="angleText">Angle: </p>
-        <button onclick="generateValues()">Generate</button>
-    </div>
-    <div class="container2">
-        <h2>Check Bit Stream</h2>
-        <div class="Outer-container">
-            <div class="Inner-container">
-                <input type="text" id="bitStreamInput" placeholder="Enter Bit Stream">
-            </div>
-            <button onclick="checkBitStream()">Check</button>
-        </div>  
-        <p id="bitStreamResult" class="different-p"></p>
-    </div>
+        <!-- Rest of your content -->
+        <div class="container">
+            <h2>Height and Angle</h2>
+            <p id="heightText">Height: </p>
+            <p id="angleText">Angle: </p>
+            <button onclick="generateValues()">Generate</button>
+        </div>
+        <div class="container2">
+            <h2>Check Bit Stream</h2>
+            <div class="Outer-container">
+                <div class="Inner-container">
+                    <input type="text" id="bitStreamInput" placeholder="Enter Bit Stream">
+                </div>
+                <button onclick="checkBitStream()">Check</button>
+            </div>  
+            <p id="bitStreamResult" class="different-p"></p>
+        </div>
+    <footer>
+        <p>&copy; Weaved with 🕸 by Spider.</p>
+    </footer>
     <script>
         function generateValues() {
             var minHeight = 10;
