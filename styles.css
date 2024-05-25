@@ -20,7 +20,22 @@ body {
     left: 0;
     z-index: 1000;
 } */
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
+}
 
+.header img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 50px; /* Adjust as needed */
+    cursor: pointer;
+}
 main {
     flex: 1;
     margin-top: 100px; /* Adjust if necessary to avoid overlap with the fixed header */
