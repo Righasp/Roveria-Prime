@@ -88,8 +88,8 @@ input[type="text"], button {
 
 #clubLogo {
     position: absolute;
-    top: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
     width: 100px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
 }
