@@ -10,32 +10,7 @@ body {
     padding-top: 20vh; /* Optional: Adds some space at the top of the page */
 }
 
-/* header {
-    width: 100%;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    position: fixed;
-    top: 15px;
-    left: 0;
-    z-index: 1000;
-} */
-.header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    text-align: center;
-}
 
-.header img {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    height: 50px; /* Adjust as needed */
-    cursor: pointer;
-}
 main {
     flex: 1;
     margin-top: 100px; /* Adjust if necessary to avoid overlap with the fixed header */
@@ -99,9 +74,6 @@ p {
     font-size: 1.2em;
     margin-top: 10px 0;
 }
-.different-p {
-    font-size: 100em; /* Define different font size */
-}
 
 .Inner-container {
     display: flex;
@@ -135,3 +107,11 @@ input[type="text"], button {
     height: auto; /* Maintain aspect ratio */
 }
 
+a:hover {
+    opacity: 0.8;
+}
+
+.level-button-container {
+    margin-top: 50px;
+    text-align: center;
+}

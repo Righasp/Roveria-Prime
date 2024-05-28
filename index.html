@@ -7,36 +7,44 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <!-- <header>
-        <h1>Spider R&D</h1>
-    </header> -->
+
     <h1>Spider R&D</h1>
-    <!-- Logo -->
+
 
     <a href="https://www.instagram.com/merovindgfhg/?hl=en" target="_blank">
         <img src="https://github.com/Righasp/Roveria-Prime/blob/main/Imgs/spiderlogo.aa201e32.png?raw=true" alt="Club Logo" id="clubLogo">
     </a>
-        <!-- Rest of your content -->
+
+    <div class="level-button-container">
+        <button id="level3Button">Level 3</button>
+    </div>
+
+
+    <!-- Rest of your content -->
+    <div id="content" style="display: none;">
         <div class="container">
             <h2>Velocity and Angle</h2>
             <p id="velocityText">Velocity: </p>
             <p id="angleText">Angle: </p>
             <button onclick="generateValues()">Generate</button>
         </div>
+
         <div class="container2">
             <h2>Check Bit Stream</h2>
             <div class="Outer-container">
-                <div class="Inner-container">
+                <!-- <div class="Inner-container"> -->
                     <input type="text" id="bitStreamInput" placeholder="Enter Bit Stream">
-                </div>
+                <!-- </div> -->
                 <button onclick="checkBitStream()">Check</button>
+                <p id="bitStreamResult" class="different-p"></p>
             </div>  
-            <p id="bitStreamResult" class="different-p"></p>
         </div>
-    <footer>
-        <p>&copy; Weaved with 🕸 by Spider.</p>
-    </footer>
+        
+        <footer>
+            <p>&copy; Weaved with 🕸 by Spider.</p>
+        </footer>
+    </div>
+
     <script>
         function generateValues() {
             var minvelocity = 10;
@@ -44,21 +52,54 @@
             var minAngle = 0;
             var maxAngle = 80;
 
-            var randomvelocity = Math.floor(Math.random() * (maxvelocity - minvelocity + 1)) + minvelocity;
+            var randomVelocity = Math.floor(Math.random() * (maxvelocity - minvelocity + 1)) + minvelocity;
             var randomAngle = Math.floor(Math.random() * (maxAngle - minAngle + 1)) + minAngle;
 
-            document.getElementById("velocityText").innerText = "velocity: " + randomvelocity;
+            document.getElementById("velocityText").innerText = "Velocity: " + randomVelocity;
             document.getElementById("angleText").innerText = "Angle: " + randomAngle;
+
+
+            // var storedVelocity = localStorage.getItem('velocity');
+            // var storedAngle = localStorage.getItem('angle');
+
+            // if (storedVelocity === null || storedAngle === null) {
+            //     var randomVelocity = Math.floor(Math.random() * (maxvelocity - minvelocity + 1)) + minvelocity;
+            //     var randomAngle = Math.floor(Math.random() * (maxAngle - minAngle + 1)) + minAngle;
+
+            //     localStorage.setItem('velocity', randomVelocity);
+            //     localStorage.setItem('angle', randomAngle);
+
+            //     storedVelocity = randomVelocity;
+            //     storedAngle = randomAngle;
+            // }
+
+            // document.getElementById("velocityText").innerText = "Velocity: " + storedVelocity;
+            // document.getElementById("angleText").innerText = "Angle: " + storedAngle;
         }
         function checkBitStream() {
             var input = document.getElementById("bitStreamInput").value.trim().toLowerCase();
 
+            if (input === "") {
+                document.getElementById("bitStreamResult").innerText = "Please Enter a Bit stream for checking";
+                document.getElementById("bitStreamResult").style.color = "red"
+                return;
+            } 
+
+
             if (input === "merovin anna is the best") {
                 document.getElementById("bitStreamResult").innerText = "The entered Bit Stream is Right";
+                document.getElementById("bitStreamResult").style.color = "green"
             } else {
                 document.getElementById("bitStreamResult").innerText = "The entered Bit Stream is Wrong";
+                document.getElementById("bitStreamResult").style.color = "red"
             }
         }
+
+        document.getElementById("level3Button").addEventListener("click", function() {
+            document.getElementById("content").style.display = "block";
+            this.style.display = "none";
+        });
+        
     </script>
 </body>
 </html>
