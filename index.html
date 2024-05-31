@@ -12,18 +12,29 @@
     <h1>Spider R&D</h1>
 
     <a href="https://www.instagram.com/merovindgfhg/?hl=en" target="_blank">
-        <img src="https://github.com/Righasp/Roveria-Prime/blob/main/Imgs/spiderlogo.aa201e32.png?raw=true" alt="Spider R&D Club Logo" id="clubLogo">
+        <img src="https://github.com/Righasp/Roveria_Prime_task_1/blob/main/Imgs/spiderlogo.aa201e32.png?raw=true" alt="Spider R&D Club Logo" id="clubLogo">
     </a>
 
-    <div class="level-button-container">
+    <!-- <div class="level-button-container">
         <button id="level3Button">Level 3</button>
+    </div> -->
+
+    <div class="indexcontainer">
+
+        <button id="Electronicsbutton">Electrnoics Task</button>
+        <button id="Embeddedbutton">Embedded Task</button>
     </div>
 
     <script>
-            document.getElementById("level3Button").addEventListener("click", function() {
-            sessionStorage.setItem('level3Access', 'true');
-            window.location.href = "level-3.html";
+            document.getElementById("Embeddedbutton").addEventListener("click", function() {
+            sessionStorage.setItem('EmbeddedAccess', 'true');
+            window.location.href = "embedded.html";
+        });
+            document.getElementById("Electronicsbutton").addEventListener("click", function() {
+            sessionStorage.setItem('ElectrnoicsAccess', 'true');
+            window.location.href = "electrnoics.html";
         });
     </script>
+
 </body>
 </html>

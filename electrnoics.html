@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spider R&D</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        .color-block {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+            border: 1px solid #000;
+            /* Add border for visibility */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Spider R&D</h1>
+
+    <a href="https://www.instagram.com/merovindgfhg/?hl=en" target="_blank">
+        <img src="https://github.com/Righasp/Roveria_Prime_task_1/blob/main/Imgs/spiderlogo.aa201e32.png?raw=true"
+            alt="Club Logo" id="clubLogo" />
+    </a>
+
+    <!-- Rest of your content -->
+
+    <div class="camerabitstreamcontainer">
+        <h2>Serial Bit Stream</h2>
+        <h2 id="secondheading">from camera</h2>
+
+        <p id="BitStream">Bit Stream:</p>
+
+        <button onclick="generatebitstream()">Generate</button>
+    </div>
+
+    <div class="camerabitstreamcontainer">
+        <h2>Checking Coordinates</h2>
+                <input type="text" id="xcoordinate" placeholder="Enter X Coordinate" />
+                <input type="text" id="ycoordinate" placeholder="Enter Y Coordinate" />
+            
+            <button onclick="checkcoordinates()">Check</button>
+            <p id="Result"></p>
+    </div>
+
+    <footer>
+        <p>&copy; Weaved with 🕸 by Spider.</p>
+    </footer>
+
+    <script>
+        if (sessionStorage.getItem("ElectrnoicsAccess") !== "true") {
+            window.location.href = "index.html";
+        }
+        let randombitstream;
+        function generatebitstream() {
+            var minbitstreams = 1;
+            var maxbitstreams = 10;
+
+            // randombitstream = Math.floor(Math.random() * (maxbitstreams - minbitstreams + 1)) + minbitstreams;
+            randombitstream = 1;
+            if (randombitstream == 1) {
+                document.getElementById("BitStream").innerText =
+                    "Bit Stream: " +
+                    "1";
+            }
+            else if (randombitstream == 2){
+                document.getElementById("BitStream").innerText =
+                    "Bit Stream: " +
+                    "2";
+            }
+            else if (randombitstream == 3){
+                document.getElementById("BitStream").innerText =
+                    "Bit Stream: " +
+                    "3";
+            }
+            else if (randombitstream == 4){
+                document.getElementById("BitStream").innerText =
+                    "Bit Stream: " +
+                    "4";
+            }
+            else if (randombitstream == 5){
+                document.getElementById("BitStream").innerText =
+                    "Bit Stream: " +
+                    "5";
+            }
+            else if (randombitstream == 6){
+                document.getElementById("BitStream").innerText =
+                    "Bit Stream: " +
+                    "6";
+            }
+            else if (randombitstream == 7){
+                document.getElementById("BitStream").innerText =
+                    "Bit Stream: " +
+                    "7";
+            }
+            else if (randombitstream == 8){
+                document.getElementById("BitStream").innerText =
+                    "Bit Stream: " +
+                    "8";
+            }
+            else if (randombitstream == 9){
+                document.getElementById("BitStream").innerText =
+                    "Bit Stream: " +
+                    "9";
+            }
+            else if (randombitstream == 10){
+                document.getElementById("BitStream").innerText =
+                    "Bit Stream: " +
+                    "10";
+            }
+
+            // var storedVelocity = localStorage.getItem('velocity');
+            // var storedAngle = localStorage.getItem('angle');
+
+            // if (storedVelocity === null || storedAngle === null) {
+            //     var randomVelocity = Math.floor(Math.random() * (maxvelocity - minvelocity + 1)) + minvelocity;
+            //     var randomAngle = Math.floor(Math.random() * (maxAngle - minAngle + 1)) + minAngle;
+
+            //     localStorage.setItem('velocity', randomVelocity);
+            //     localStorage.setItem('angle', randomAngle);
+
+            //     storedVelocity = randomVelocity;
+            //     storedAngle = randomAngle;
+            // }
+
+            // document.getElementById("velocityText").innerText = "Velocity: " + storedVelocity;
+            // document.getElementById("angleText").innerText = "Angle: " + storedAngle;
+        }
+
+
+        function checkcoordinates() {
+            var xcoordinate = document.getElementById("xcoordinate").value.trim();
+            var ycoordinate = document.getElementById("ycoordinate").value.trim();
+            
+            if (xcoordinate === "" || ycoordinate === "" ) {
+                document.getElementById("Result").innerText = "Please Enter a Bit stream for checking";
+                
+                document.getElementById("Result").style.color = "red";
+                return
+            }
+            else{
+            // if (ycoordinate === "") {
+            //     document.getElementById("Result").innerText = "Please Enter coordinates for checking";
+            //     document.getElementById("Result").style.color = "red"
+            //     return;
+            // }
+            if(randombitstream === undefined){
+                document.getElementById("Result").innerText = "Genrate a Bit Stream first";
+                document.getElementById("Result").style.color = "red"
+                return;
+            }
+            else{
+            const x = parseInt(xcoordinate);
+            const y = parseInt(ycoordinate);
+
+            if (randombitstream === 1 && x === 1 && y === 2) {
+                document.getElementById("Result").innerText =
+                    "The entered Bit Stream is Right";
+                document.getElementById("Result").style.color = "green";
+            } else {
+                document.getElementById("Result").innerText =
+                    "The entered Bit Stream is Wrong";
+                document.getElementById("Result").style.color = "red";
+            }
+        }
+        }
+        }
+    </script>
+</body>
+
+</html>

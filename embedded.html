@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spider R&D</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
 
     <h1>Spider R&D</h1>
 
 
     <a href="https://www.instagram.com/merovindgfhg/?hl=en" target="_blank">
-        <img src="https://github.com/Righasp/Roveria-Prime/blob/main/Imgs/spiderlogo.aa201e32.png?raw=true" alt="Club Logo" id="clubLogo">
+        <img src="https://github.com/Righasp/Roveria_Prime_task_1/blob/main/Imgs/spiderlogo.aa201e32.png?raw=true"
+            alt="Club Logo" id="clubLogo">
     </a>
 
     <!-- Rest of your content -->
@@ -20,18 +24,22 @@
         <h2>Velocity and Angle</h2>
         <p id="velocityText">Velocity: </p>
         <p id="angleText">Angle: </p>
+        <!-- <p id="colorText">Color: <span class="color-block" id="colorBlock"></span></p> -->
+        <!-- <p id="colorText2"> </p> -->
+        <p id="colorText">Color: </p>
+        <div id="colorBox" class="color-box"></div>
         <button onclick="generateValues()">Generate</button>
     </div>
 
-    <div class="container2">
+    <div class="checkbitstreamcontainer">
         <h2>Check Bit Stream</h2>
         <div class="Outer-container">
             <!-- <div class="Inner-container"> -->
-                <input type="text" id="bitStreamInput" placeholder="Enter Bit Stream">
+            <input type="text" id="bitStreamInput" placeholder="Enter Bit Stream">
             <!-- </div> -->
             <button onclick="checkBitStream()">Check</button>
             <p id="bitStreamResult" class="different-p"></p>
-        </div>  
+        </div>
     </div>
 
     <footer>
@@ -39,10 +47,10 @@
     </footer>
 
     <script>
-        if (sessionStorage.getItem('level3Access') !== 'true') {
+        if (sessionStorage.getItem('EmbeddedAccess') !== 'true') {
             window.location.href = 'index.html';
         }
-        
+
         function generateValues() {
             var minvelocity = 10;
             var maxvelocity = 30;
@@ -51,11 +59,14 @@
 
             var randomVelocity = Math.floor(Math.random() * (maxvelocity - minvelocity + 1)) + minvelocity;
             var randomAngle = Math.floor(Math.random() * (maxAngle - minAngle + 1)) + minAngle;
+            var randomColor = generateRandomColor();
 
-            document.getElementById("velocityText").innerText = "Velocity: " + randomVelocity;
-            document.getElementById("angleText").innerText = "Angle: " + randomAngle;
-
-
+            document.getElementById("velocityText").innerText = "Velocity: " + randomVelocity + "m/s";
+            document.getElementById("angleText").innerText = "Angle: " + randomAngle + "°";
+            document.getElementById("colorText").innerText = "Color: " + randomColor;
+            document.getElementById("colorText").style.color = randomColor;
+            document.getElementById("colorBox").style.color = randomColor;
+            document.getElementById("colorBox").style.backgroundColor = randomColor;
             // var storedVelocity = localStorage.getItem('velocity');
             // var storedAngle = localStorage.getItem('angle');
 
@@ -73,6 +84,16 @@
             // document.getElementById("velocityText").innerText = "Velocity: " + storedVelocity;
             // document.getElementById("angleText").innerText = "Angle: " + storedAngle;
         }
+
+        function generateRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#FF00';
+            for (var i = 0; i < 2; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
         function checkBitStream() {
             var input = document.getElementById("bitStreamInput").value.trim().toLowerCase();
 
@@ -80,7 +101,7 @@
                 document.getElementById("bitStreamResult").innerText = "Please Enter a Bit stream for checking";
                 document.getElementById("bitStreamResult").style.color = "red"
                 return;
-            } 
+            }
 
 
             if (input === "merovin anna is the best") {
@@ -91,7 +112,8 @@
                 document.getElementById("bitStreamResult").style.color = "red"
             }
         }
-        
+
     </script>
 </body>
+
 </html>

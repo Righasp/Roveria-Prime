@@ -1,24 +1,28 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #010213; /* Background color */
+    background-color: #010213;
+    /* Background color */
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh; /* Ensures the page is scrollable */
-    padding-top: 20vh; /* Optional: Adds some space at the top of the page */
+    min-height: 80vh;
+    /* Ensures the page is scrollable */
+    padding-top: 20vh;
+    /* Optional: Adds some space at the top of the page */
 }
-
 
 main {
     flex: 1;
-    margin-top: 100px; /* Adjust if necessary to avoid overlap with the fixed header */
+    margin-top: 100px;
+    /* Adjust if necessary to avoid overlap with the fixed header */
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 60px; /* To prevent content from being hidden behind the fixed footer */
+    padding-bottom: 60px;
+    /* To prevent content from being hidden behind the fixed footer */
 }
 
 .container {
@@ -26,37 +30,77 @@ main {
     background-color: #fff;
     padding: 50px;
     border-radius: 22px;
-    box-shadow: 0 0 40px rgba(109, 77, 255, 0.5), 0 0 80px rgba(109, 77, 255, 0.5); /* Glow effect with #6D4DFF color */
-    margin-bottom: 100px; /* Space between containers */
+    box-shadow: 0 0 40px rgba(109, 77, 255, 0.5), 0 0 80px rgba(109, 77, 255, 0.5);
+    /* Glow effect with #6D4DFF color */
+    margin-bottom: 100px;
+    /* Space between containers */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.container2 {
+
+.indexcontainer {
     text-align: center;
     background-color: #fff;
     padding: 50px;
     border-radius: 22px;
-    box-shadow: 0 0 40px rgba(109, 77, 255, 0.5), 0 0 80px rgba(109, 77, 255, 0.5); /* Glow effect with #6D4DFF color */
-    margin-bottom: 20px; /* Space between containers */
+    box-shadow: 0 0 40px rgba(109, 77, 255, 0.5), 0 0 80px rgba(109, 77, 255, 0.5);
+    /* Glow effect with #6D4DFF color */
+    margin-bottom: 100px;
+    /* Space between containers */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.checkbitstreamcontainer {
+    text-align: center;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 22px;
+    box-shadow: 0 0 40px rgba(109, 77, 255, 0.5), 0 0 80px rgba(109, 77, 255, 0.5);
+    /* Glow effect with #6D4DFF color */
+    margin-bottom: 20px;
+    /* Space between containers */
+}
+
+.camerabitstreamcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 22px;
+    box-shadow: 0 0 40px rgba(109, 77, 255, 0.5), 0 0 80px rgba(109, 77, 255, 0.5);
+    /* Glow effect with #6D4DFF color */
+    margin: 30px auto; /* Center the container with space around it */
+    max-width: 90%; /* Ensure it doesn't go too wide on large screens */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    text-align: center;
 }
 
 button {
-    background-color: #6D4DFF;
+    background-color: #6d4dff;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 28px;
     font-size: 1em;
     cursor: pointer;
-    margin-top: 10px; /* Space between the paragraph and button */
+    margin-top: 10px;
+    /* Space between the paragraph and button */
 }
 
 button:hover {
-    background-color: #141E31; /* Darker shade for hover effect */
+    background-color: #141e31;
+    /* Darker shade for hover effect */
+    transition: background-color 0.3s;
 }
 
 h1 {
     color: #ffffff;
     margin: 0;
-    font-size: 2.5em; /* Adjust as needed */
+    font-size: 2.5em;
+    /* Adjust as needed */
     position: absolute;
     top: 35px;
     /* left: 150px; */
@@ -66,13 +110,14 @@ h1 {
 h2 {
     color: #333;
     font-size: 2em;
-    margin-bottom: 20px; /* Space below the header */
+    margin-bottom: 20px;
+    /* Space below the header */
 }
 
 p {
     color: #666;
     font-size: 1.2em;
-    margin-top: 10px 0;
+    margin-top: -3px;
 }
 
 .Inner-container {
@@ -87,7 +132,14 @@ p {
     align-items: center;
 }
 
-input[type="text"], button {
+.Outer-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"],
+button {
     margin: 10px 0;
     padding: 10px;
     font-size: 1em;
@@ -101,10 +153,14 @@ input[type="text"], button {
 
 #clubLogo {
     position: absolute;
-    top: 10px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    width: 100px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+    top: 10px;
+    /* Adjust as needed */
+    right: 10px;
+    /* Adjust as needed */
+    width: 100px;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
 }
 
 a:hover {
@@ -114,4 +170,27 @@ a:hover {
 .level-button-container {
     margin-top: 50px;
     text-align: center;
+}
+
+.color-box {
+    text-align: center;
+    width: 100px;
+    height: 25px;
+    border: 1px solid #000;
+    margin-top: -3px;
+}
+
+#secondheading{
+    margin-top: -5px
+}
+
+#BitStream {
+    width: 100%; /* Ensure the paragraph takes full width of the container */
+    word-wrap: break-word; /* Ensure long words break to the next line */
+    word-break: break-all; /* Ensure it breaks at any character */
+    white-space: normal; /* Ensure text wraps normally */
+}
+
+#Result{
+    margin-top: 9px
 }
