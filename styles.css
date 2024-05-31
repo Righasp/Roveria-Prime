@@ -37,6 +37,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 30px auto; /* Center the container with space around it */
+    max-width: 90%; /* Ensure it doesn't go too wide on large screens */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    text-align: center;
 }
 
 .indexcontainer {
@@ -61,6 +65,10 @@ main {
     /* Glow effect with #6D4DFF color */
     margin-bottom: 20px;
     /* Space between containers */
+    margin: 30px auto; /* Center the container with space around it */
+    max-width: 90%; /* Ensure it doesn't go too wide on large screens */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    text-align: center;
     
 }
 
