@@ -61,8 +61,8 @@
             var minbitstreams = 1;
             var maxbitstreams = 10;
 
-            // randombitstream = Math.floor(Math.random() * (maxbitstreams - minbitstreams + 1)) + minbitstreams;
-            randombitstream = 1;
+            randombitstream = Math.floor(Math.random() * (maxbitstreams - minbitstreams + 1)) + minbitstreams;
+            // randombitstream = 1;
             if (randombitstream == 1) {
                 document.getElementById("BitStream").innerText =
                     "Bit Stream: " +
