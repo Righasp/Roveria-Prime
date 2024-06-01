@@ -31,6 +31,17 @@
         <button onclick="generateValues()">Generate</button>
     </div>
 
+    <div class="checkheightcontainer">
+        <h2>Check Height</h2>
+
+        <!-- <div class="Inner-container"> -->
+        <input type="text" id="heightinput" placeholder="Enter Height">
+        <!-- </div> -->
+        <button onclick="checkHeight()">Check</button>
+        <p id="Height" class="different-p"></p>
+
+    </div>
+
     <div class="checkbitstreamcontainer">
         <h2>Check Bit Stream</h2>
         <div class="Outer-container">
@@ -42,6 +53,7 @@
         </div>
     </div>
 
+
     <footer>
         <p>&copy; Weaved with 🕸 by Spider.</p>
     </footer>
@@ -51,22 +63,94 @@
             window.location.href = 'index.html';
         }
 
+        var randomangle;
+        var randomVelocity;
+        var coloranalog;
+        var coloranaloghex = 0;
+
+        function checkHeight() {
+            var angleRadians = randomangle * (Math.PI / 180);
+            var inputheight = document.getElementById("heightinput").value.trim();
+
+            // Perform the calculation
+            var height = 9 + (50 * Math.tan(angleRadians)) - (6250 / (randomVelocity * randomVelocity * Math.cos(angleRadians) * Math.cos(angleRadians)));
+            height = height.toFixed(2);
+            const heightstring = height.toString();
+            // document.getElementById("bitStreamResult").innerText = height;
+
+            if (heightstring === inputheight) {
+                document.getElementById("Height").innerText = "Entered height is correct" + height;
+            }
+            else {
+                document.getElementById("Height").innerText = "Entered height is wrong" + height;
+            }
+        }
+
         function generateValues() {
+            coloranaloghex = 0;
+            var minnoofangles = 1;
+            var maxnoofangles = 10;
+
             var minvelocity = 10;
             var maxvelocity = 30;
             var minAngle = 0;
             var maxAngle = 80;
 
-            var randomVelocity = Math.floor(Math.random() * (maxvelocity - minvelocity + 1)) + minvelocity;
-            var randomAngle = Math.floor(Math.random() * (maxAngle - minAngle + 1)) + minAngle;
-            var randomColor = generateRandomColor();
+            randomangle = ((Math.floor(Math.random() * (maxnoofangles - minnoofangles + 1)) + minnoofangles) * 5);
 
+            // var randomVelocity = Math.floor(Math.random() * (maxvelocity - minvelocity + 1)) + minvelocity;
+            // var randomAngle = Math.floor(Math.random() * (maxAngle - minAngle + 1)) + minAngle;
+            var randomColor = generateRandomColor();
+            if (randomangle === 5) {
+                randomVelocity = (Math.random() * (25.91 - 21.69)) + 21.69;
+                randomVelocity = randomVelocity.toFixed(2);
+            }
+            else if (randomangle === 10) {
+                randomVelocity = (Math.random() * (19.02 - 21.61) * -1) + 19.02;
+                randomVelocity = randomVelocity.toFixed(2);
+            }
+            else if (randomangle === 15) {
+                randomVelocity = (Math.random() * (17.30 - 19.09) * -1) + 17.30;
+                randomVelocity = randomVelocity.toFixed(2);
+            }
+            else if (randomangle === 20) {
+                randomVelocity = (Math.random() * (16.13 - 17.47) * -1) + 16.13;
+                randomVelocity = randomVelocity.toFixed(2);
+            }
+            else if (randomangle === 25) {
+                randomVelocity = (Math.random() * (15.35 - 16.39) * -1) + 15.35;
+                randomVelocity = randomVelocity.toFixed(2);
+            }
+            else if (randomangle === 30) {
+                randomVelocity = (Math.random() * (14.73 - 15.54) * -1) + 14.73;
+                randomVelocity = randomVelocity.toFixed(2);
+            }
+            else if (randomangle === 35) {
+                randomVelocity = (Math.random() * (14.22 - 14.83) * -1) + 14.22;
+                randomVelocity = randomVelocity.toFixed(2);
+            }
+            else if (randomangle === 40) {
+                randomVelocity = (Math.random() * (13.79 - 14.34) * -1) + 13.79;
+                randomVelocity = randomVelocity.toFixed(2);
+            }
+            else if (randomangle === 45) {
+                randomVelocity = (Math.random() * (13.41 - 13.88) * -1) + 13.41;
+                randomVelocity = randomVelocity.toFixed(2);
+            }
+            else if (randomangle === 50) {
+                randomVelocity = (Math.random() * (13.07 - 13.49) * -1) + 13.07;
+                randomVelocity = randomVelocity.toFixed(2);
+            }
             document.getElementById("velocityText").innerText = "Velocity: " + randomVelocity + "m/s";
-            document.getElementById("angleText").innerText = "Angle: " + randomAngle + "°";
+            document.getElementById("angleText").innerText = "Angle: " + randomangle + "°";
             document.getElementById("colorText").innerText = "Color: " + randomColor;
             document.getElementById("colorText").style.color = randomColor;
             document.getElementById("colorBox").style.color = randomColor;
             document.getElementById("colorBox").style.backgroundColor = randomColor;
+
+
+
+
             // var storedVelocity = localStorage.getItem('velocity');
             // var storedAngle = localStorage.getItem('angle');
 
@@ -89,14 +173,40 @@
             var letters = '0123456789ABCDEF';
             var color = '#FF00';
             for (var i = 0; i < 2; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
+                coloranalog = Math.floor(Math.random() * 16)
+                color += letters[coloranalog];
+                coloranaloghex = coloranaloghex + (coloranalog * Math.pow(16, (1 - i)));
             }
+            // document.getElementById("Height").innerText = coloranaloghex;
             return color;
         }
 
         function checkBitStream() {
-            var input = document.getElementById("bitStreamInput").value.trim().toLowerCase();
+            var input = document.getElementById("bitStreamInput").value.trim();
 
+            //0 analog --> 0 degree
+            //255 analog --> 100 degree
+            //x analog --> y degree
+
+            var degree = ((100 * coloranaloghex) / 255);
+
+            // 100 degree --> 1litre
+            // 50 degree --> 0.5litre
+            // x degree --> y litre
+
+            var litre = (degree / 100);
+            var massofwater = litre;
+
+            var specificheatcapacity = ((massofwater * 4.182 * 100) + (2256 * massofwater)) / (100);
+            specificheatcapacity = specificheatcapacity.toFixed(2);
+
+            const specificHeatCapacityString = specificheatcapacity.toString();
+            // document.getElementById("Height").innerText = specificHeatCapacityString;
+
+
+            // Debugging statements
+            console.log("Input:", input);
+            console.log("Specific Heat Capacity String:", specificHeatCapacityString);
             if (input === "") {
                 document.getElementById("bitStreamResult").innerText = "Please Enter a Bit stream for checking";
                 document.getElementById("bitStreamResult").style.color = "red"
@@ -104,7 +214,7 @@
             }
 
 
-            if (input === "merovin anna is the best") {
+            if (specificHeatCapacityString === input) {
                 document.getElementById("bitStreamResult").innerText = "The entered Bit Stream is Right";
                 document.getElementById("bitStreamResult").style.color = "green"
             } else {

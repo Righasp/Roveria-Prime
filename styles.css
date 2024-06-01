@@ -71,6 +71,21 @@ main {
     text-align: center;
     
 }
+.checkheightcontainer {
+    text-align: center;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 22px;
+    box-shadow: 0 0 40px rgba(109, 77, 255, 0.5), 0 0 80px rgba(109, 77, 255, 0.5);
+    /* Glow effect with #6D4DFF color */
+    margin-bottom: 20px;
+    /* Space between containers */
+    margin: 30px auto; /* Center the container with space around it */
+    max-width: 90%; /* Ensure it doesn't go too wide on large screens */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    text-align: center;
+    
+}
 
 .camerabitstreamcontainer {
     display: flex;
@@ -175,6 +190,12 @@ button {
 }
 
 #bitStreamResult {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 20px;
+}
+
+#Height {
     font-size: 1.2em;
     color: #333;
     margin-top: 20px;
