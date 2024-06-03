@@ -39,6 +39,7 @@
         <!-- </div> -->
         <button onclick="checkHeight()">Check</button>
         <p id="Height" class="different-p"></p>
+        <p id="tempHeight" class="different-p"></p>
 
     </div>
 
@@ -50,6 +51,7 @@
             <!-- </div> -->
             <button onclick="checkBitStream()">Check</button>
             <p id="bitStreamResult" class="different-p"></p>
+            <p id="tempbitstream" class="different-p"></p>
         </div>
     </div>
 
@@ -78,11 +80,15 @@
             const heightstring = height.toString();
             // document.getElementById("bitStreamResult").innerText = height;
 
+            document.getElementById("tempHeight").innerText = height;
             if (heightstring === inputheight) {
-                document.getElementById("Height").innerText = "Entered height is correct " + height;
+                document.getElementById("Height").innerText = "Entered height is correct ";
+                document.getElementById("Height").style.color = "green"
+                
             }
             else {
-                document.getElementById("Height").innerText = "Entered height is wrong " + height;
+                document.getElementById("Height").innerText = "Entered height is wrong ";
+                document.getElementById("Height").style.color = "red"
             }
         }
 
@@ -170,14 +176,19 @@
         }
 
         function generateRandomColor() {
-            var letters = '0123456789ABCDEF';
+            var letters = '3456789ABCDEF';
             var color = '#FF00';
             for (var i = 0; i < 2; i++) {
-                coloranalog = Math.floor(Math.random() * 16)
+                coloranalog = Math.floor(Math.random() * 13)
                 color += letters[coloranalog];
-                coloranaloghex = coloranaloghex + (coloranalog * Math.pow(16, (1 - i)));
+                coloranaloghex = coloranaloghex + ((coloranalog + 3) * Math.pow(16, (1 - i)));
             }
             // document.getElementById("Height").innerText = coloranaloghex;
+
+            console.log("color: ", color)
+            console.log("coloranalog: ", coloranalog)
+            console.log("coloranaloghex: ",coloranaloghex)
+
             return color;
         }
 
@@ -201,12 +212,12 @@
             specificheatcapacity = specificheatcapacity.toFixed(2);
 
             const specificHeatCapacityString = specificheatcapacity.toString();
-            // document.getElementById("Height").innerText = specificHeatCapacityString;
+            document.getElementById("tempbitstream").innerText = specificHeatCapacityString;
 
 
             // Debugging statements
             console.log("Input:", input);
-            console.log("Specific Heat Capacity String:", specificHeatCapacityString);
+            console.log("Specific Heat Capacity String: ", specificHeatCapacityString);
             if (input === "") {
                 document.getElementById("bitStreamResult").innerText = "Please Enter a Bit stream for checking";
                 document.getElementById("bitStreamResult").style.color = "red"
