@@ -84,11 +84,11 @@
             if (randombitstream == 1) {
                 document.getElementById("BitStream").innerText =
                     "Bit Stream: " +
-                    "0000000000010000000000000011111100000000000000000000000000000000";
+                    "0000000000010000000000000011000000000000000000000000000000000000";
                 // 00000000
                 // 00010000
                 // 00000000
-                // 00111111
+                // 00110000
                 // 00000000
                 // 00000000
                 // 00000000
@@ -97,11 +97,11 @@
             else if (randombitstream == 2) {
                 document.getElementById("BitStream").innerText =
                     "Bit Stream: " +
-                    "0000000000001000000000000011111100000000000000000000000000000000";
+                    "0000000000001000000000000011100000000000000000000000000000000000";
                 // 00000000
                 // 00001000
                 // 00000000
-                // 00111111
+                // 00111000
                 // 00000000
                 // 00000000
                 // 00000000
@@ -110,11 +110,11 @@
             else if (randombitstream == 3) {
                 document.getElementById("BitStream").innerText =
                     "Bit Stream: " +
-                    "0000000000000100000000000011111100000000000000000000000000000000";
+                    "0000000000000100000000000011110000000000000000000000000000000000";
                 // 00000000
                 // 00000100
                 // 00000000
-                // 00111111
+                // 00111100
                 // 00000000
                 // 00000000
                 // 00000000
@@ -123,11 +123,11 @@
             else if (randombitstream == 4) {
                 document.getElementById("BitStream").innerText =
                     "Bit Stream: " +
-                    "0000000000000010000000000011111100000000000000000000000000000000";
+                    "0000000000000010000000000011111000000000000000000000000000000000";
                 // 00000000
                 // 00000010
                 // 00000000
-                // 00111111
+                // 00111100
                 // 00000000
                 // 00000000
                 // 00000000
@@ -149,11 +149,11 @@
             else if (randombitstream == 6) {
                 document.getElementById("BitStream").innerText =
                     "Bit Stream: " +
-                    "0000000000000000000100000011111100000000000000000000000000000000"
+                    "0000000000000000000100000011000000000000000000000000000000000000"
                 // 00000000
                 // 00000000
                 // 00010000
-                // 00111111
+                // 00110000
                 // 00000000
                 // 00000000
                 // 00000000
@@ -162,11 +162,11 @@
             else if (randombitstream == 7) {
                 document.getElementById("BitStream").innerText =
                     "Bit Stream: " +
-                    "0000000000000000000010000011111100000000000000000000000000000000"
+                    "0000000000000000000010000011100000000000000000000000000000000000"
                 // 00000000
                 // 00000000
                 // 00001000
-                // 00111111
+                // 00111000
                 // 00000000
                 // 00000000
                 // 00000000
@@ -175,11 +175,11 @@
             else if (randombitstream == 8) {
                 document.getElementById("BitStream").innerText =
                     "Bit Stream: " +
-                    "0000000000000000000001000011111100000000000000000000000000000000"
+                    "0000000000000000000001000011110000000000000000000000000000000000"
                 // 00000000
                 // 00000000
                 // 00000100
-                // 00111111
+                // 00111100
                 // 00000000
                 // 00000000
                 // 00000000
@@ -188,11 +188,11 @@
             else if (randombitstream == 9) {
                 document.getElementById("BitStream").innerText =
                     "Bit Stream: " +
-                    "0000000000000000000000100011111100000000000000000000000000000000"
+                    "0000000000000000000000100011111000000000000000000000000000000000"
                 // 00000000
                 // 00000000
                 // 00000010
-                // 00111111
+                // 00111110
                 // 00000000
                 // 00000000
                 // 00000000
@@ -265,22 +265,22 @@
                     const bottomrighty = parseInt(bottomrightycoordinate);
 
 
-                    if (randombitstream === 1 && topx === 3 && topy === 1 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 7 && bottomrighty == 3) {
+                    if (randombitstream === 1 && topx === 3 && topy === 1 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 3 && bottomrighty == 3) {
                         document.getElementById("Result").innerText =
                             "The entered Bit Stream is Right";
                         document.getElementById("Result").style.color = "green";
                     }
-                    else if (randombitstream === 2 && topx === 4 && topy === 1 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 7 && bottomrighty == 3) {
+                    else if (randombitstream === 2 && topx === 4 && topy === 1 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 4 && bottomrighty == 3) {
                         document.getElementById("Result").innerText =
                             "The entered Bit Stream is Right";
                         document.getElementById("Result").style.color = "green";
                     }
-                    else if (randombitstream === 3 && topx === 5 && topy === 1 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 7 && bottomrighty == 3) {
+                    else if (randombitstream === 3 && topx === 5 && topy === 1 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 5 && bottomrighty == 3) {
                         document.getElementById("Result").innerText =
                             "The entered Bit Stream is Right";
                         document.getElementById("Result").style.color = "green";
                     }
-                    else if (randombitstream === 4 && topx === 6 && topy === 1 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 7 && bottomrighty == 3) {
+                    else if (randombitstream === 4 && topx === 6 && topy === 1 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 6 && bottomrighty == 3) {
                         document.getElementById("Result").innerText =
                             "The entered Bit Stream is Right";
                         document.getElementById("Result").style.color = "green";
@@ -290,22 +290,22 @@
                             "The entered Bit Stream is Right";
                         document.getElementById("Result").style.color = "green";
                     }
-                    else if (randombitstream === 6 && topx === 3 && topy === 2 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 7 && bottomrighty == 3) {
+                    else if (randombitstream === 6 && topx === 3 && topy === 2 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 3 && bottomrighty == 3) {
                         document.getElementById("Result").innerText =
                             "The entered Bit Stream is Right";
                         document.getElementById("Result").style.color = "green";
                     }
-                    else if (randombitstream === 7 && topx === 4 && topy === 2 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 7 && bottomrighty == 3) {
+                    else if (randombitstream === 7 && topx === 4 && topy === 2 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 4 && bottomrighty == 3) {
                         document.getElementById("Result").innerText =
                             "The entered Bit Stream is Right";
                         document.getElementById("Result").style.color = "green";
                     }
-                    else if (randombitstream === 8 && topx === 5 && topy === 2 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 7 && bottomrighty == 3) {
+                    else if (randombitstream === 8 && topx === 5 && topy === 2 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 5 && bottomrighty == 3) {
                         document.getElementById("Result").innerText =
                             "The entered Bit Stream is Right";
                         document.getElementById("Result").style.color = "green";
                     }
-                    else if (randombitstream === 9 && topx === 6 && topy === 2 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 7 && bottomrighty == 3) {
+                    else if (randombitstream === 9 && topx === 6 && topy === 2 && bottomleftx === 2 && bottomlefty === 3 && bottomrightx == 6 && bottomrighty == 3) {
                         document.getElementById("Result").innerText =
                             "The entered Bit Stream is Right";
                         document.getElementById("Result").style.color = "green";

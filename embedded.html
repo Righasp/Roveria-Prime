@@ -22,11 +22,11 @@
     <!-- Rest of your content -->
     <div class="container">
         <h2>Velocity and Angle</h2>
-        <p id="velocityText">Velocity: </p>
-        <p id="angleText">Angle: </p>
+        <p id="velocityText">Velocity of projection: </p>
+        <p id="angleText">Angle of projection: </p>
         <!-- <p id="colorText">Color: <span class="color-block" id="colorBlock"></span></p> -->
         <!-- <p id="colorText2"> </p> -->
-        <p id="colorText">Color: </p>
+        <p id="colorText">Color after 100deg difference: </p>
         <div id="colorBox" class="color-box"></div>
         <button onclick="generateValues()">Generate</button>
     </div>
@@ -54,6 +54,7 @@
             <p id="tempbitstream" class="different-p"></p>
         </div>
     </div>
+    
 
 
     <footer>
@@ -79,8 +80,13 @@
             height = height.toFixed(2);
             const heightstring = height.toString();
             // document.getElementById("bitStreamResult").innerText = height;
-
-            document.getElementById("tempHeight").innerText = height;
+            // console.log(height);
+            // document.getElementById("tempHeight").innerText = height;
+            if (inputheight === "") {
+                document.getElementById("Height").innerText = "Please Enter a Height for checking";
+                document.getElementById("Height").style.color = "red"
+                return;
+            }
             if (heightstring === inputheight) {
                 document.getElementById("Height").innerText = "Entered height is correct ";
                 document.getElementById("Height").style.color = "green"
@@ -147,9 +153,9 @@
                 randomVelocity = (Math.random() * (13.07 - 13.49) * -1) + 13.07;
                 randomVelocity = randomVelocity.toFixed(2);
             }
-            document.getElementById("velocityText").innerText = "Velocity: " + randomVelocity + "m/s";
-            document.getElementById("angleText").innerText = "Angle: " + randomangle + "°";
-            document.getElementById("colorText").innerText = "Color: " + randomColor;
+            document.getElementById("velocityText").innerText = "Velocity of projection: " + randomVelocity + "m/s";
+            document.getElementById("angleText").innerText = "Angle of projection: " + randomangle + "°";
+            document.getElementById("colorText").innerText = "Color after 100deg difference: " + randomColor;
             document.getElementById("colorText").style.color = randomColor;
             document.getElementById("colorBox").style.color = randomColor;
             document.getElementById("colorBox").style.backgroundColor = randomColor;
@@ -212,7 +218,7 @@
             specificheatcapacity = specificheatcapacity.toFixed(2);
 
             const specificHeatCapacityString = specificheatcapacity.toString();
-            document.getElementById("tempbitstream").innerText = specificHeatCapacityString;
+            // document.getElementById("tempbitstream").innerText = specificHeatCapacityString;
 
 
             // Debugging statements
