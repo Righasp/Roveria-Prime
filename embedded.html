@@ -32,11 +32,12 @@
     </div>
 
     <div class="checkheightcontainer">
-        <h2>Check Height</h2>
+        <h2>Check Height and angle</h2>
 
-        <!-- <div class="Inner-container"> -->
+        <div class="Inner-container">
         <input type="text" id="heightinput" placeholder="Enter Height">
-        <!-- </div> -->
+        <input type="text" id="angleinput" placeholder="Enter Angle">
+        </div>
         <button onclick="checkHeight()">Check</button>
         <p id="Height" class="different-p"></p>
         <p id="tempHeight" class="different-p"></p>
@@ -74,7 +75,7 @@
         function checkHeight() {
             var angleRadians = randomangle * (Math.PI / 180);
             var inputheight = document.getElementById("heightinput").value.trim();
-
+            var inputangle =  document.getElementById("angleinput").value.trim();
             // Perform the calculation
             var height = 9 + (50 * Math.tan(angleRadians)) - (6250 / (randomVelocity * randomVelocity * Math.cos(angleRadians) * Math.cos(angleRadians)));
             height = height.toFixed(2);
@@ -215,15 +216,61 @@
             var massofwater = litre;
 
             var specificheatcapacity = ((massofwater * 4.182 * 100) + (2256 * massofwater)) / (100);
-            specificheatcapacity = specificheatcapacity.toFixed(2);
+            // var specificheatcapacity2 = specificheatcapacity.toFixed(2);
+            // specificheatcapacity = specificheatcapacity.toFixed(0);
+
+            specificheatcapacity = Math.trunc(specificheatcapacity);
+            // specificheatcapacity = specificheatcapacity.toFixed(2);
 
             const specificHeatCapacityString = specificheatcapacity.toString();
+            // const specificHeatCapacityString2 = specificheatcapacity2.toString();
             // document.getElementById("tempbitstream").innerText = specificHeatCapacityString;
 
 
-            // Debugging statements
-            console.log("Input:", input);
-            console.log("Specific Heat Capacity String: ", specificHeatCapacityString);
+
+            function digitTo4BitBinary(digit) {
+            // Convert the digit to a binary string
+            let binaryString = digit.toString(2);
+            
+            // Pad the binary string to ensure it has a length of 4 bits
+            while (binaryString.length < 4) {
+                binaryString = '0' + binaryString;
+            }
+            
+            return binaryString;
+        }
+
+
+            function intToSerialBitStream(integer) {
+            // Convert the integer to a string to split into digits
+            let integerString = integer.toString();
+            
+            // Initialize an array to hold the binary strings
+            let binaryArray = [];
+            
+            // Convert each digit to a 4-bit binary string and add to the array
+            for (let char of integerString) {
+                let digit = parseInt(char);
+                binaryArray.push(digitTo4BitBinary(digit));
+            }
+            
+            // Concatenate the binary strings to form the final bit stream
+            let serialBitStream = binaryArray.join('');
+            
+            return serialBitStream;
+        }
+           
+        
+        
+        var trimmedValue = Math.trunc(specificheatcapacity);
+        var serialBitStream = intToSerialBitStream(trimmedValue);
+        
+        console.log("Specific Heat Capacity String: ", specificHeatCapacityString);
+        console.log('Trimmed Value:', trimmedValue);
+        console.log('Serial Bit Stream:', serialBitStream); // Output: 00010111
+        console.log("Input:", input);
+        
+        // Debugging statements
             if (input === "") {
                 document.getElementById("bitStreamResult").innerText = "Please Enter a Bit stream for checking";
                 document.getElementById("bitStreamResult").style.color = "red"
@@ -231,7 +278,14 @@
             }
 
 
-            if (specificHeatCapacityString === input) {
+            // if (specificHeatCapacityString === input) {
+            //     document.getElementById("bitStreamResult").innerText = "The entered Bit Stream is Right";
+            //     document.getElementById("bitStreamResult").style.color = "green"
+            // } else {
+            //     document.getElementById("bitStreamResult").innerText = "The entered Bit Stream is Wrong";
+            //     document.getElementById("bitStreamResult").style.color = "red"
+            // }
+            if (serialBitStream === input) {
                 document.getElementById("bitStreamResult").innerText = "The entered Bit Stream is Right";
                 document.getElementById("bitStreamResult").style.color = "green"
             } else {
