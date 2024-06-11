@@ -73,6 +73,7 @@
         var coloranaloghex = 0;
 
         function checkHeight() {
+
             var angleRadians = randomangle * (Math.PI / 180);
             var inputheight = document.getElementById("heightinput").value.trim();
             var inputangle =  document.getElementById("angleinput").value.trim();
@@ -80,21 +81,43 @@
             var height = 9 + (50 * Math.tan(angleRadians)) - (6250 / (randomVelocity * randomVelocity * Math.cos(angleRadians) * Math.cos(angleRadians)));
             height = height.toFixed(2);
             const heightstring = height.toString();
+
+            // randomVelocity = 18; 
+            
+            var innerangle = Math.tan(angleRadians) - (250 / (randomVelocity * randomVelocity * Math.cos(angleRadians) * Math.cos(angleRadians)));
+            innerangle = innerangle*-1;
+            var angle = Math.atan(innerangle);
+            angle = angle * (180/Math.PI);
+            angle = Math.trunc(angle);
+            var angleminus1 = angle - 1;
+            var angleminus2 = angle - 2;
+            var angleplus2 = angle + 2;
+            var angleplus1 = angle + 1;
+
+            const anglestring = angle.toString();
+            const angleminus1string = angleminus1.toString();
+            const angleminus2string = angleminus2.toString();
+            const angleplus2string = angleplus2.toString();
+            const angleplus1string = angleplus1.toString();
+
+
             // document.getElementById("bitStreamResult").innerText = height;
-            // console.log(height);
+            console.log(height);
+            console.log(innerangle);
+            console.log(angle);
             // document.getElementById("tempHeight").innerText = height;
-            if (inputheight === "") {
-                document.getElementById("Height").innerText = "Please Enter a Height for checking";
+            if (inputheight === "" || inputangle ==="") {
+                document.getElementById("Height").innerText = "Please Enter Height and Angle for checking";
                 document.getElementById("Height").style.color = "red"
                 return;
             }
-            if (heightstring === inputheight) {
-                document.getElementById("Height").innerText = "Entered height is correct ";
+            if (heightstring === inputheight && ((anglestring === inputangle) || (angleminus1string === inputangle) || (angleminus2string === (inputangle)) || (angleplus1string === (inputangle)) || (angleplus2string === (inputangle)))) {
+                document.getElementById("Height").innerText = "Entered height and angle is correct ";
                 document.getElementById("Height").style.color = "green"
                 
             }
             else {
-                document.getElementById("Height").innerText = "Entered height is wrong ";
+                document.getElementById("Height").innerText = "Entered parameters are wrong ";
                 document.getElementById("Height").style.color = "red"
             }
         }
