@@ -248,3 +248,47 @@ a:hover {
 #labels{
     margin-top: 15px
 }
+
+#instruc{
+    font-size: 0.8em;
+    color: #8a8a8a;
+
+}
+
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: none;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#feedback {
+    text-align: center;
+    margin-top: 20px;
+    color: #696969;
+
+}
+
+#feedback a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#feedback a:hover {
+    color: #0056b3;
+}
+
+#feedback img {
+    width: 20px;
+    vertical-align: middle;
+    
+}
